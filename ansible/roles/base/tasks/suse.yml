@@ -29,17 +29,6 @@
       register: suseconnect_status
       changed_when: false
 
-    - name: Adding location of python3-jsonpatch for {{ full_module_path }}.
-      when: full_module_path not in suseconnect_status.stdout
-      ansible.builtin.command: SUSEConnect -p {{ full_module_path }}
-      register: suseconnect_register
-      changed_when: "'Registering' in suseconnect_register.stdout"
-
-    - name: Installing python3-jsonpatch.
-      community.general.zypper:
-        name: python3-jsonpatch
-        state: present
-
     - name: Installing cloud-init.
       when: enable_cloudinit == 'true'
       community.general.zypper:

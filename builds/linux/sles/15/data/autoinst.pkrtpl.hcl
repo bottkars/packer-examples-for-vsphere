@@ -739,6 +739,7 @@
       <package>autoyast2</package>
       <package>open-vm-tools</package>
       <package>perl</package>
+      <package>python311</package>
 %{ for package in additional_packages ~}
       <package>${package}</package>
 %{ endfor ~}
@@ -763,6 +764,12 @@
   </ssh_import>
   <suse_register t="map">
     <addons t="list">
+      <addon t="map">
+        <arch>x86_64</arch>
+        <name>sle-module-python3</name>
+        <release_type>nil</release_type>
+        <version>15.5</version>
+      </addon>
       <addon t="map">
         <arch>x86_64</arch>
         <name>sle-module-server-applications</name>
@@ -836,3 +843,4 @@
     </post-scripts>
   </scripts>
 </profile>
+

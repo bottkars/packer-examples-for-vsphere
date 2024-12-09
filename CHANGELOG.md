@@ -8,6 +8,9 @@
 
 - Reestablished an empty `GRUB_CMDLINE_LINUX_DEFAULT` as `late_command` for Ubuntu.
   [#982](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/982)
+- Resolved configuration and setup for Python and cloud-init in SUSE Enterprise Linux environments. 
+  Added a fallback mechanism for the Python interpreter, removing redundant tasks, and updating package installation and 
+  registration. [#991](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/991)
 
 **Enhancement**:
 
